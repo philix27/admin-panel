@@ -1,9 +1,9 @@
 {
-  "name": "ts-nextjs-tailwind-starter",
+  "name": "mobarter-admin-panel",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 5454",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
