@@ -13,7 +13,15 @@ type IDrawerItem = { title: string; icon: IconType; href?: string; children?: ID
 const items: IDrawerItem[] = [
   { title: 'Overview', icon: RiAppsFill, href: "/dashboard" },
   {
-    title: 'Orders',
+    title: 'Orders - Buy',
+    icon: RiListOrdered,
+    children: [
+      { title: 'Buy', icon: RiListOrdered, href: "/dashboard" },
+      { title: 'Sell', icon: RiListOrdered, href: "/dashboard" },
+    ],
+  },
+  {
+    title: 'Orders - Sell',
     icon: RiListOrdered,
     children: [
       { title: 'Buy', icon: RiListOrdered, href: "/dashboard" },

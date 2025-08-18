@@ -1,7 +1,7 @@
 import React from 'react';
 
-import DashboardView from '@/app/dashboard/view';
+import TransactionsView from './view';
 
 export default function Page() {
-  return <DashboardView />;
+  return <TransactionsView />
 }
