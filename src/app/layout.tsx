@@ -6,6 +6,8 @@ import '@/styles/globals.css';
 import '@/styles/colors.css';
 import '@/styles/index.css';
 
+import Providers from '@/lib/providers';
+
 import { siteConfig } from '@/constant/config';
 
 // !STARTERCONF Change these default meta
@@ -57,7 +59,9 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

@@ -6,13 +6,7 @@
 
 @layer base {
   :root {
-    /* Telegram */
-    --safe-area-inset-bottom: calc(
-      100vh - var(--tg-viewport-stable-height, 100vh)
-    );
-    .safemybottomelement {
-      padding-bottom: calc(1rem + var(--safe-area-inset-bottom));
-    }
+
     /* Tailwind */
     --background: #ffffff;
     --foreground: #494a4a;
@@ -78,9 +72,8 @@
     --radius: 0.5rem;
   }
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
     /* font-family: 'Fira Mono', serif; */
-    background: var(--tg-theme-secondary-bg-color, #363637);
   }
 }
 
@@ -122,7 +115,6 @@ body {
   -ms-content-zooming: none;
   touch-action: pan-x pan-y;
   -ms-touch-action: pan-x pan-y;
-  background: var(--tg-theme-secondary-bg-color, #18222e);
 }
 
 @layer utilities {
