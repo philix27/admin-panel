@@ -1,5 +1,7 @@
 import React from 'react';
 
+import DashboardView from '@/app/dashboard/view';
+
 export default function Page() {
-  return <div>Page</div>;
+  return <DashboardView />;
 }

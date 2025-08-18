@@ -36,6 +36,7 @@ export default function HomePage() {
             <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
               See the repository
             </ArrowLink>
+            <ArrowLink href='/dashboard'>Dashboard</ArrowLink>
           </p>
 
           <ButtonLink className='mt-6' href='/components' variant='light'>
