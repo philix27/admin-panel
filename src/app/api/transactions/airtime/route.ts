@@ -2,10 +2,10 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 
 export type TransactionAirtimeResponse = {
-  content: Transaction[];
+  content: TransactionAirtime[];
 };
 
-export type Transaction = {
+export type TransactionAirtime = {
   transactionId: number;
   status: string;
   operatorTransactionId: string | null;
@@ -51,13 +51,13 @@ export async function GET(req: Request) {
 
     // Build params dynamically (fallbacks for defaults)
     const params = {
-      size: searchParams.get("size") || "10",
+      size: searchParams.get("size") || "100",
       page: searchParams.get("page") || "1",
       countryCode: searchParams.get("countryCode") || "NG",
       // operatorId: searchParams.get("operatorId") || "341",
       // operatorName: searchParams.get("operatorName") || "MTN Nigeria",
       // customIdentifier: searchParams.get("customIdentifier") || "april-top-up",
-      startDate: searchParams.get("startDate") || "2025-02-10 00:00:00",
+      startDate: searchParams.get("startDate") || "2025-01-10 00:00:00",
       endDate: searchParams.get("endDate") || "2025-08-30 00:00:00",
     };
 

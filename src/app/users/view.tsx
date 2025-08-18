@@ -6,6 +6,7 @@ import React from 'react';
 import { FbUser } from '@/lib/firebase/init';
 
 import { LayoutWrapper } from '@/app/comps/layoutWrapper';
+import { Tr, Th, Td } from "@/app/components/table";
 
 
 export default function UsersView() {
@@ -43,31 +44,32 @@ export function UsersTable() {
       <div className="overflow-x-auto">
         <table className="min-w-full border border-gray-300 rounded-lg shadow-sm">
           <thead className="bg-gray-100">
-            <tr>
-              <th className="px-4 py-2 text-left border-none">Email</th>
-              <th className="px-4 py-2 text-left border-none">Name</th>
-              <th className="px-4 py-2 text-left border-none">CreatedAt</th>
-              <th className="px-4 py-2 text-left border-none">LastSignIn</th>
-              <th className="px-4 py-2 text-left border-none">UID</th>
-            </tr>
+            <Tr >
+              <Th>Email</Th>
+              <Th>Name</Th>
+              <Th>Created At</Th>
+              <Th>Last SignIn</Th>
+              <Th>UID</Th>
+            </Tr>
           </thead>
           <tbody>
             {users && users.length > 0 ? (
               users.map((user, i) => (
-                <tr key={user.uid} className={"hover:bg-gray-50 ".concat(i % 2 == 0 ? "bg-gray-100" : "bg-gray-200")}>
-                  <td className="px-4 py-2 border-none">{user.email || "—"}</td>
-                  <td className="px-4 py-2 border-none">{user.displayName || "—"}</td>
-                  <td className="px-4 py-2 border-none">{user.creationTime || "—"}</td>
-                  <td className="px-4 py-2 border-none">{user.lastSignInTime || "—"}</td>
-                  <td className="px-4 py-2 border-none">{user.uid}</td>
-                </tr>
+                <Tr key={i} isOdd={i % 2 == 0}>
+                  <Td>{user.email || "—"}</Td>
+                  <Td>{user.displayName || "—"}</Td>
+                  <Td>{user.creationTime || "—"}</Td>
+                  <Td>{user.lastSignInTime || "—"}</Td>
+                  <Td>{user.uid}</Td>
+                </Tr>
               ))
             ) : (
-              <tr>
+              <Tr >
                 <td className="px-4 py-2 border text-center" colSpan={4}>
                   No users found
                 </td>
-              </tr>
+                <></>
+              </Tr >
             )}
           </tbody>
         </table>
@@ -75,3 +77,4 @@ export function UsersTable() {
     </div>
   );
 }
+
