@@ -6,7 +6,7 @@ import axios from 'axios';
 import React from 'react';
 
 
-import { Tr, Th, Td } from "@/app/components/table";
+import { Tr, Th, Td, Table } from "@/components/table";
 import { TransactionAirtime } from "@/app/api/transactions/airtime/route";
 
 async function fetchUsers(): Promise<TransactionAirtime[]> {
@@ -33,7 +33,7 @@ export default function AirtimeTxn() {
     <div className="p-6 w-full overflow-y-scroll h-[calc(100vh-100px)]">
       <h1 className="text-2xl font-bold mb-4">{txns && txns.length} Transactions </h1>
       <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-300 rounded-lg shadow-sm">
+        <Table>
           <thead className="bg-gray-100">
             <Tr >
               <Th>Operator</Th>
@@ -42,6 +42,8 @@ export default function AirtimeTxn() {
               <Th>Country</Th>
               <Th>Sender Phone</Th>
               <Th>Date</Th>
+              <Th>Status</Th>
+              {/* <Th>Balance</Th> */}
             </Tr>
           </thead>
           <tbody>
@@ -54,6 +56,8 @@ export default function AirtimeTxn() {
                   <Td>{item.countryCode || "—"}</Td>
                   <Td>{item.senderPhone}</Td>
                   <Td>{item.transactionDate}</Td>
+                  <Td>{item.status}</Td>
+                  {/* <Td>{JSON.stringify(item.balanceInfo) || "_"}</Td> */}
                 </Tr>
               ))
             ) : (
@@ -65,7 +69,7 @@ export default function AirtimeTxn() {
               </Tr >
             )}
           </tbody>
-        </table>
+        </Table>
       </div>
     </div>
   );

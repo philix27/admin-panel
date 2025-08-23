@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 
-import Drawer from '@/app/comps/Drawer';
+import Drawer from '@/components/Drawer';
 
 export function LayoutWrapper(props: { children: ReactNode }) {
   return (
-    <div className='w-screen h-screen flex bg-background-500'>
+    <div className='w-screen h-screen flex bg-gray-800'>
       <div className='w-[300px]'>
         <Drawer />
       </div>

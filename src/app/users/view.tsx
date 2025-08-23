@@ -5,8 +5,8 @@ import React from 'react';
 
 import { FbUser } from '@/lib/firebase/init';
 
-import { LayoutWrapper } from '@/app/comps/layoutWrapper';
-import { Tr, Th, Td } from "@/app/components/table";
+import { LayoutWrapper } from '@/components/layoutWrapper';
+import { Tr, Th, Td, Table } from "@/components/table";
 
 
 export default function UsersView() {
@@ -41,9 +41,9 @@ export function UsersTable() {
   return (
     <div className="p-6 w-full">
       <h1 className="text-2xl font-bold mb-4">{users && users.length} Users </h1>
-      <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-300 rounded-lg shadow-sm">
-          <thead className="bg-gray-100">
+      <div className="overflow-x-auto rounded-md">
+        <Table>
+          <thead className="">
             <Tr >
               <Th>Email</Th>
               <Th>Name</Th>
@@ -72,7 +72,7 @@ export function UsersTable() {
               </Tr >
             )}
           </tbody>
-        </table>
+        </Table>
       </div>
     </div>
   );

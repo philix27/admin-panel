@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 
-import { LayoutWrapper } from '@/app/comps/layoutWrapper';
+import { LayoutWrapper } from '@/components/layoutWrapper';
 import { cn } from '@/lib/utils';
 import { AppStores } from '@/lib/zustand';
 import AirtimeTxn from '@/app/transactions/AirtimeTxn';
